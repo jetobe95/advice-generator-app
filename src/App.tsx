@@ -8,7 +8,7 @@ function App() {
     return <p>Error fetching advice</p>;
   }
   return (
-    <div className="advice">
+    <main className="advice">
       {fetchAdviseStatus === DataState.loading ? (
         <p>Loading advice...</p>
       ) : (
@@ -19,8 +19,12 @@ function App() {
       )}
 
       <div className="advice__divider" />
-      <button className="advice__button" onClick={fetchAdvise} />
-    </div>
+      <button
+        className="advice__button"
+        aria-label="load new advice"
+        onClick={fetchAdvise}
+      />
+    </main>
   );
 }
 
